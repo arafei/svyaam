@@ -15,7 +15,7 @@ library(inline)
 library(Rcpp)
 library(RcppArmadillo)
 
-sourceCpp("aamC1.cpp")
+sourceCpp("aamC.cpp")
 
 aam1 <- function(time, censor=NULL, X, weight=NULL, cluster=NULL, strata=NULL, method="no"){
 	X <- data.frame(X)
@@ -52,7 +52,7 @@ aam1 <- function(time, censor=NULL, X, weight=NULL, cluster=NULL, strata=NULL, m
 		cluster[strata==h] <- as.numeric(as.factor(cluster[strata==h]))
 	}
 
-	outC <- aamC1(time=time, CR=censor, DM=X, WT=weight, ST=strata, CL=cluster, MT=method)
+	outC <- aamC(time=time, CR=censor, DM=X, WT=weight, ST=strata, CL=cluster, MT=method)
 	Ast <- outC$AstX
 	Ost <- outC$OstX
 
