@@ -8,7 +8,7 @@ using namespace arma;
 // [[Rcpp::plugins(cpp11)]] 
 // [[Rcpp::export]]
 
-Rcpp::List aamC1(arma::dvec & time, arma::dvec & CR, arma::dmat & DM, arma::dvec & WT, arma::dvec & ST, arma::dvec & CL, std::string & MT){
+Rcpp::List aamC(arma::dvec & time, arma::dvec & CR, arma::dmat & DM, arma::dvec & WT, arma::dvec & ST, arma::dvec & CL, std::string & MT){
 
 	unsigned int n = time.n_elem;
 	unsigned int r = DM.n_cols-1;
